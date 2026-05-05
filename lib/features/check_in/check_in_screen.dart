@@ -339,9 +339,7 @@ class _CheckInScreenState extends State<CheckInScreen>
                       label: 'Share',
                       icon: Icons.ios_share_rounded,
                       onPressed: () {
-                        SharePlus.instance.share(
-                          ShareParams(text: _formatShareText(_summary!)),
-                        );
+                        Share.share(_formatShareText(_summary!));
                       },
                     ),
                   ),
