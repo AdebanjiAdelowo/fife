@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir \"c:\\\\Users\\\\michael.ibukun\\\\mi_hub\\\\fife\")",
+      "Bash(mkdir -p \"c:/Users/michael.ibukun/mi_hub/fife/lib/core/theme\" \"c:/Users/michael.ibukun/mi_hub/fife/lib/core/storage\" \"c:/Users/michael.ibukun/mi_hub/fife/lib/core/routing\" \"c:/Users/michael.ibukun/mi_hub/fife/lib/models\" \"c:/Users/michael.ibukun/mi_hub/fife/lib/widgets\" \"c:/Users/michael.ibukun/mi_hub/fife/lib/features/welcome\" \"c:/Users/michael.ibukun/mi_hub/fife/lib/features/auth\" \"c:/Users/michael.ibukun/mi_hub/fife/lib/features/dashboard\" \"c:/Users/michael.ibukun/mi_hub/fife/lib/features/body_progress\" \"c:/Users/michael.ibukun/mi_hub/fife/lib/features/journal\" \"c:/Users/michael.ibukun/mi_hub/fife/lib/features/schedule\" \"c:/Users/michael.ibukun/mi_hub/fife/lib/features/check_in\" \"c:/Users/michael.ibukun/mi_hub/fife/lib/features/profile\" \"c:/Users/michael.ibukun/mi_hub/fife/assets/images\")",
+      "Bash(ls \"C:/Users/michael.ibukun/.claude/projects/c--Users-michael-ibukun-mi-hub-fife/memory/\" 2>/dev/null)",
+      "Read(//c/Users/michael.ibukun/.claude/projects/c--Users-michael-ibukun-mi-hub-fife/**)"
+    ],
+    "additionalDirectories": [
+      "c:\\Users\\michael.ibukun\\mi_hub\\fife\\lib\\core"
+    ]
+  }
+}
