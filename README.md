@@ -2,6 +2,9 @@
 
 A Flutter mobile app for tracking fitness progress: body measurements, workout check-ins, a daily schedule, and a training journal, wrapped in a dark, single-user local-storage experience (no backend required for v1).
 
+Original app concept, design, and the majority of the implementation by Michael Ibukun.
+Adebanji Adelowo's contribution to this repository is the iOS Flutter project configuration fix.
+
 ## Features
 
 - **Auth**: local sign-up and login (SHA-256 hashed credentials via `crypto`), session persisted with `shared_preferences`
@@ -39,3 +42,20 @@ lib/
 ├── models/         # UserProfile, BodyMeasurement, JournalEntry, ScheduleTask, WorkoutReport
 └── widgets/        # shared UI components
 ```
+
+## Design notes
+
+- **Palette**: pure-black canvas (`#0A0B0D`), graphite surfaces (`#14161A`-`#22262C`), electric-lime
+  CTA glow (`#C8F751` to `#B6FF3A`).
+- **Type**: Plus Jakarta Sans for UI text, Playfair Display for marketing-style displays, loaded via
+  `google_fonts`.
+- **Logo**: drawn with `CustomPainter` (`widgets/fife_logo.dart`) so it recolours and scales without
+  shipping multiple raster sizes.
+- **Local storage schema** (`SharedPreferences`, keyed per user id): `users.index` (registered user
+  ids), `user.<id>` (profile, including a SHA-256 password hash), `auth.currentUserId` (active
+  session), `measurements.<userId>`, `journal.<userId>`, `schedule.<userId>.<date>` (daily task
+  list, seeded by default), `workouts.<userId>`, `diet.<userId>` (gallery image paths). Swapping to
+  a network-backed store later is a single-file change behind the `LocalStorage` interface.
+- **Why SharedPreferences over Hive/Isar**: keeps the v1 dependency surface small and avoids codegen.
+- **Why hash passwords in a local-only app**: avoids leaking plaintext in the JSON store if a device
+  is shared; not a substitute for real auth once a backend exists.
